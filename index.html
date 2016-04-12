@@ -10,11 +10,24 @@
     <script type="text/javascript" src="underscore.js"></script>
     <script type="text/javascript">
 
-        var arr = ['ccc','ddd','aaa','bbb','eee'];
+        var person = {
+            alter: []
+        };
 
-        var test = _.sortBy(arr);
+        var arr = [17, 19, 23];
+
+        var test = _.map(arr, function(num)
+        {
+            this.alter.push(num);
+
+            return num + 10;
+        }, person);
 
         console.dir(test);
+        console.dir(person);
+
+
+
 
     </script>
 </body>
