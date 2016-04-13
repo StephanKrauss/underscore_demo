@@ -10,24 +10,20 @@
     <script type="text/javascript" src="underscore.js"></script>
     <script type="text/javascript">
 
-        var person = {
-            alter: []
-        };
+        function isEven(n) {
+          n = Number(n);
+          return n === 0 || !!(n && !(n%2));
+        }
 
-        var arr = [17, 19, 23];
+        function isOdd(n) {
+          return isEven(Number(n) + 1);
+        }
 
-        var test = _.map(arr, function(num)
-        {
-            this.alter.push(num);
+        var arr = [0, 1, 2, 3, 4, 5];
 
-            return num + 10;
-        }, person);
+        var test = _.partition(arr, isOdd);
 
-        console.dir(test);
-        console.dir(person);
-
-
-
+        console.log(test);
 
     </script>
 </body>
